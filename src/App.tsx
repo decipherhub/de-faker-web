@@ -8,11 +8,13 @@ import {
 import { ActivityContainer } from "./containers/ActivityContainer";
 import { inject, observer } from "mobx-react";
 import { STORE_ROUTER } from "./constants";
+import { ActiveUserContainer } from "./containers/ActiveUserContainer";
+import { DashboardContainer } from "./containers/DashboardContainer";
 
 export interface AppProps {}
 export interface AppStates {}
 
-@inject(STORE_ROUTER)
+@inject(STORE_ROUTER, STORE_ROUTER)
 @observer
 class App extends React.Component<AppProps, AppStates> {
   render() {
@@ -21,47 +23,13 @@ class App extends React.Component<AppProps, AppStates> {
         <div>
           <Header />
 
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={DashboardContainer} />
           <Route path="/activities" component={ActivityContainer} />
-          <Route path="/accounts" component={Accounts} />
+          <Route path="/users" component={ActiveUserContainer} />
         </div>
       </Router>
     );
   }
-}
-
-function Home() {
-  return <h2>Dashboard</h2>;
-}
-
-class Account extends React.Component<RouteComponentProps<any>> {
-  render() {
-    return <h3>Requested Param: {this.props.match.params.id}</h3>;
-  }
-}
-
-function Accounts({ match }: RouteComponentProps<any>) {
-  return (
-    <div>
-      <h2>Accounts</h2>
-
-      <ul>
-        <li>
-          <Link to={`${match.url}/components`}>Components</Link>
-        </li>
-        <li>
-          <Link to={`${match.url}/props-v-state`}>Props v. State</Link>
-        </li>
-      </ul>
-
-      <Route path={`${match.path}/:id`} component={Account} />
-      <Route
-        exact
-        path={match.path}
-        render={() => <h3>Please select a topic.</h3>}
-      />
-    </div>
-  );
 }
 
 function Header() {
@@ -74,7 +42,7 @@ function Header() {
         <Link to="/activities">Activities</Link>
       </li>
       <li>
-        <Link to="/accounts">Accounts</Link>
+        <Link to="/users">Active Users</Link>
       </li>
     </ul>
   );

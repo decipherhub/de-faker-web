@@ -2,11 +2,11 @@ import { observable, action } from "mobx";
 import { persist } from "mobx-persist";
 import { Activity } from "../models/Activity";
 
-export interface IActivityStore {
+export interface IActiveUserStore {
   activities: Activity[];
 }
 
-export class ActivityStore implements IActivityStore {
+export class ActiveUserStore implements IActiveUserStore {
   @persist @observable activities: Activity[] = [];
 
   @action.bound
