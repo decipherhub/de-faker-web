@@ -1,12 +1,12 @@
 import * as React from "react";
 import { inject, observer } from "mobx-react";
 import { RouteComponentProps } from "react-router";
-import { STORE_ACTIVITY, STORE_ROUTER } from "../../constants";
+import { STORE_ROUTER, STORE_DASHBOARD } from "../../constants";
 
 export interface DashboardContainerProps extends RouteComponentProps<any> {}
 export interface DashboardContainerState {}
 
-@inject(STORE_ACTIVITY, STORE_ROUTER)
+@inject(STORE_DASHBOARD, STORE_ROUTER)
 @observer
 export class DashboardContainer extends React.Component<
   DashboardContainerProps,

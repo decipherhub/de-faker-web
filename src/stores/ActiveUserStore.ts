@@ -1,16 +1,16 @@
 import { observable, action } from "mobx";
 import { persist } from "mobx-persist";
-import { Activity } from "../models/Activity";
+import { ActiveUser } from "../models/ActiveUser";
 
 export interface IActiveUserStore {
-  activities: Activity[];
+  users: ActiveUser[];
 }
 
 export class ActiveUserStore implements IActiveUserStore {
-  @persist @observable activities: Activity[] = [];
+  @persist @observable users: ActiveUser[] = [];
 
   @action.bound
-  public push(activity: Activity): void {
-    this.activities.push(activity);
+  public push(activeUser: ActiveUser): void {
+    this.users.push(activeUser);
   }
 }
