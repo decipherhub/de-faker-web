@@ -1,4 +1,4 @@
-import { observable, action } from "mobx";
+import { observable, action, computed } from "mobx";
 import { persist } from "mobx-persist";
 import { ActiveUser } from "../models/ActiveUser";
 
@@ -9,7 +9,7 @@ export interface IDashboardStore {
 }
 
 export class DashboardStore implements IDashboardStore {
-  @persist @observable amountIn: number = 0;
-  @persist @observable amountOut: number = 0;
-  @persist @observable numberOfTx: number = 0;
+  @persist @observable public amountIn: number = 0;
+  @persist @observable public amountOut: number = 0;
+  @persist @observable public numberOfTx: number = 0;
 }
