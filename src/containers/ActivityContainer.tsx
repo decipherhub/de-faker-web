@@ -1,9 +1,9 @@
 import * as React from "react";
 import { inject, observer } from "mobx-react";
 import { RouteComponentProps } from "react-router";
-import { STORE_ACTIVITY, STORE_ROUTER } from "../../constants";
-import { ActivityStore } from "../../stores/ActivityStore";
-import { Activity } from "../../models/Activity";
+import { STORE_ACTIVITY, STORE_ROUTER } from "../constants";
+import { ActivityStore } from "../stores/ActivityStore";
+import { Activity } from "../models/Activity";
 
 export interface ActivityContainerProps extends RouteComponentProps<any> {
   [STORE_ACTIVITY]: ActivityStore;

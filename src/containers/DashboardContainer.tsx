@@ -1,8 +1,8 @@
 import * as React from "react";
 import { inject, observer } from "mobx-react";
 import { RouteComponentProps } from "react-router";
-import { STORE_ROUTER, STORE_DASHBOARD } from "../../constants";
-import { DashboardStore } from "../../stores/Dashboard";
+import { STORE_ROUTER, STORE_DASHBOARD } from "../constants";
+import { DashboardStore } from "../stores/DashboardStore";
 
 export interface DashboardContainerProps extends RouteComponentProps<any> {
   [STORE_DASHBOARD]: DashboardStore;

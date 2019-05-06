@@ -3,17 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bootstrap": "^4.3.1",
     "faker": "Marak/faker.js#master",
     "mobx": "^5.9.4",
     "mobx-persist": "^0.4.1",
     "mobx-react": "^5.4.3",
     "mobx-react-router": "^4.0.7",
+    "node-sass": "^4.12.0",
     "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.8",
     "react-dom": "^16.8.6",
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.0",
-    "typescript": "3.4.5"
+    "typescript": "3.4.5",
+    "web3": "^1.0.0-beta.54"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -45,6 +49,7 @@
     "@types/react": "16.8.14",
     "@types/react-dom": "16.8.4",
     "@types/react-router": "^4.4.5",
-    "@types/react-router-dom": "^4.3.2"
+    "@types/react-router-dom": "^4.3.2",
+    "@types/web3": "^1.0.18"
   }
 }

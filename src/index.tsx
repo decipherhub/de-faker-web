@@ -1,13 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "bootstrap/dist/css/bootstrap.css";
 import { Provider } from "mobx-react";
 import { createBrowserHistory } from "history";
-import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { stores } from "./stores";
 import { syncHistoryWithStore } from "mobx-react-router";
 import { Router } from "react-router";
+import "./index.css";
+import "./custom.scss";
 
 const browserHistory = createBrowserHistory();
 const history = syncHistoryWithStore(browserHistory, stores["router"]);

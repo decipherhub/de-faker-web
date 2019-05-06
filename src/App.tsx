@@ -5,11 +5,16 @@ import {
   Link,
   RouteComponentProps
 } from "react-router-dom";
-import { ActivityContainer } from "./containers/ActivityContainer";
 import { inject, observer } from "mobx-react";
 import { STORE_ROUTER } from "./constants";
-import { ActiveUserContainer } from "./containers/ActiveUserContainer";
-import { DashboardContainer } from "./containers/DashboardContainer";
+import { Container } from "react-bootstrap";
+import {
+  LandingPageContainer,
+  ActivityContainer,
+  ActiveUserContainer,
+  DashboardContainer
+} from "./containers";
+import Main from "./Main";
 
 export interface AppProps {}
 export interface AppStates {}
@@ -21,31 +26,12 @@ class App extends React.Component<AppProps, AppStates> {
     return (
       <Router>
         <div>
-          <Header />
-
-          <Route exact path="/" component={DashboardContainer} />
-          <Route path="/activities" component={ActivityContainer} />
-          <Route path="/users" component={ActiveUserContainer} />
+          <Route exact path="/" component={LandingPageContainer} />
+          <Route path="/c/:contractAddress" component={Main} />
         </div>
       </Router>
     );
   }
-}
-
-function Header() {
-  return (
-    <ul>
-      <li>
-        <Link to="/">Home</Link>
-      </li>
-      <li>
-        <Link to="/activities">Activities</Link>
-      </li>
-      <li>
-        <Link to="/users">Active Users</Link>
-      </li>
-    </ul>
-  );
 }
 
 export default App;

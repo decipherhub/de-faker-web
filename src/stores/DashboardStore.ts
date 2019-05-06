@@ -1,6 +1,5 @@
 import { observable, action, computed } from "mobx";
 import { persist } from "mobx-persist";
-import { ActiveUser } from "../models/ActiveUser";
 
 export interface IDashboardStore {
   amountIn: number;

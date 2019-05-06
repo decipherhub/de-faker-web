@@ -1,9 +1,9 @@
 import * as React from "react";
 import { inject, observer } from "mobx-react";
 import { RouteComponentProps } from "react-router";
-import { STORE_ROUTER, STORE_ACTIVE_USER } from "../../constants";
-import { ActiveUserStore } from "../../stores/ActiveUserStore";
-import { ActiveUser } from "../../models/ActiveUser";
+import { STORE_ROUTER, STORE_ACTIVE_USER } from "../constants";
+import { ActiveUserStore } from "../stores/ActiveUserStore";
+import { ActiveUser } from "../models/ActiveUser";
 
 export interface ActiveUserProps extends RouteComponentProps<any> {
   [STORE_ACTIVE_USER]: ActiveUserStore;
